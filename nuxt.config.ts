@@ -15,4 +15,13 @@ export default defineNuxtConfig({
       },
     },
   },
+  components: {
+    dirs: [
+      {
+        path: '~/components/global',
+        global: true, // 全域註冊
+      },
+      '~/components', // 區域註冊
+    ],
+  },
 });

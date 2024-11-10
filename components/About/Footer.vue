@@ -1,10 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <AboutHeader />
-  <h1>關於我們</h1>
-  <Box />
-  <AboutFooter />
+  <h1>============= About Footer =============</h1>
 </template>
 
 <style scoped></style>

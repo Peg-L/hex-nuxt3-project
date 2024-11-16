@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>
+  <div class="container">
     <header>===========👳🏻‍♂️前台👳🏻‍♂️的👳🏻‍♂️表頭👳🏻‍♂️===========</header>
     <slot />
     <footer>===========🦶🏻前台🦶🏻的🦶🏻表尾🦶🏻===========</footer>

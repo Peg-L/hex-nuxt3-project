@@ -2,7 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['vuetify-nuxt-module'],
   css: ['@/assets/stylesheets/all.scss'],
   vite: {
     css: {
@@ -14,6 +13,11 @@ export default defineNuxtConfig({
         },
       },
     },
+    server: {
+      hmr: {
+        clientPort: 3000,
+      },
+    },
   },
   components: {
     dirs: [
@@ -23,5 +27,8 @@ export default defineNuxtConfig({
       },
       '~/components', // 區域註冊
     ],
+  },
+  imports: {
+    dirs: ['stores'],
   },
 });

@@ -1,13 +1,19 @@
-<script setup lang="ts"></script>
+<script setup>
+const { getNews, newsList, isLoading } = useHome();
+await getNews();
+
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/css/index.css';
+</script>
 
 <template>
-  <Home />
-  <h1>共用區塊</h1>
-  <p>
-    頁面上的共用區塊 (header、footer)可以寫在 app.vue 內。或是寫在 layouts/default.vue 內。<br />
-    寫在 layouts/default.vue 內的話，可以選擇把 app.vue 刪除，或是在 app.vue 中使用 {{ '<NuxtLayout></NuxtLayout>' }}
-    包覆 {{ '<NuxtPage />' }} 。
-  </p>
+  <div class="container">
+    <h1>最新消息</h1>
+    <NewsCard v-for="news in newsList" :key="news.id" v-bind="news" />
+    <ClientOnly>
+      <Loading v-model:active="isLoading" />
+    </ClientOnly>
+  </div>
 </template>
 
 <style scoped></style>
